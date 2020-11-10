@@ -10,9 +10,9 @@
 }
 
 .header__logo {
-  font-size: 18px;
+  font-size: 24px;
   font-family: @font-family-secondary;
-  line-height: 20px;
+  line-height: 24px;
   font-weight: 700;
   width: 100px;
   letter-spacing: 0.040em;
@@ -35,7 +35,7 @@
   position: absolute;
   display: flex;
   justify-content: flex-end;
-  font-size: 16px;
+  font-size: 24px;
   line-height: 20px;
   transition-duration: 0.8s;
 }
@@ -60,19 +60,43 @@
   opacity: 0;
 }
 
-.header__list {
+.header__wrap-list {
   grid-column-start: 1;
   grid-column-end: 3;
   grid-row-start: 3;
   display: none;
+  opacity: 0;
+  transition: display .3s;
+}
+
+.header__list {
+  display: flex;
   flex-direction: column;
   align-items: flex-end;
   padding-bottom: 10px;
   border-bottom: 1.5px solid black;
 }
 
+.header__list--anim {
+  animation-name: lift-up;
+  animation-duration: 0.5s;
+}
+
+
+@keyframes lift-up {
+  from {
+    transform: translateX(120%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+
+}
+
 .header__list--open {
-  display: flex;
+  display: grid;
+  transform: translate3d(0%);
+  opacity: 1;
 }
 
 .header__item {
@@ -80,8 +104,8 @@
 }
 
 .header__link {
-  font-size: 16px;
-  line-height: 20px;
+  font-size: 24px;
+  line-height: 24px;
   font-family: @font-family-secondary;
   transition-duration: 0.8s;
 }
@@ -94,8 +118,8 @@
 .intro__title {
   position: relative;
   font-family: @font-family-secondary;
-  font-size: 38px;
-  line-height: 50px;
+  font-size: 50px;
+  line-height: 65px;
   text-transform: uppercase;
   margin-bottom: 30px;
   text-align: center;
@@ -106,8 +130,8 @@
 
 .intro__desc {
   font-family: @font-family-secondary;
-  font-size: 16px;
-  line-height: 26px;
+  font-size: 20px;
+  line-height: 32px;
   letter-spacing: 0.040em;
 }
 
@@ -117,9 +141,9 @@
 }
 
 .skills__title {
-  font-size: 20px;
+  font-size: 24px;
   font-family: @font-family-secondary;
-  line-height: 20px;
+  line-height: 24px;
   font-weight: 700;
   letter-spacing: 0.040em;
   margin-bottom: 15px;
@@ -135,19 +159,19 @@
 }
 
 .skills__desc {
-  font-size: 16px;
   font-family: @font-family-secondary;
-  line-height: 20px;
+  font-size: 20px;
+  line-height: 32px;
   letter-spacing: 0.040em;
 }
 
 .header__button {
   grid-column-start: 2;
   text-align: end;
-  font-size: 16px;
-  line-height: 20px;
+  font-size: 24px;
+  line-height: 24px;
   font-family: @font-family-secondary;
   transition-duration: 0.8s;
   color: black;
-  padding: 15px 0;
+  padding: 10px 0;
 }

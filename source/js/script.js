@@ -5,7 +5,8 @@ var themeButton = document.querySelector(".header__button");
 var currentTime = new Date().getHours();
 var theme = document.querySelector(".index-page");
 var titleBorder = document.querySelector(".intro__title");
-var toggleMenu = document.querySelector(".header__list");
+var toggleMenu = document.querySelector(".header__wrap-list");
+var menuAnim = document.querySelector(".header__list");
 
 toggleMenu.classList.remove("header__list--open");
 
@@ -15,6 +16,8 @@ toggle.addEventListener("click", function (evt) {
   close.classList.toggle("dropdown-menu__button--open1");
 
   toggleMenu.classList.toggle("header__list--open");
+  menuAnim.classList.toggle("header__list--anim");
+ // menuAnim.style.transform= 'translate3d(0, 0, 0)';
 });
 
 function timeCheck() {
