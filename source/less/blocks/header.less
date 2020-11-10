@@ -16,6 +16,7 @@
   font-weight: 700;
   width: 100px;
   letter-spacing: 0.040em;
+  padding: 10px 0;
 }
 
 .main-nav__toggle {
@@ -26,6 +27,7 @@
   letter-spacing: 0.040em;
   transition-duration: 0.8s;
   color: black;
+  padding: 10px 0;
 }
 
 .dropdown-menu__button {
@@ -59,8 +61,29 @@
 }
 
 .header__list {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 3;
   display: none;
-  background-color: white;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-bottom: 10px;
+  border-bottom: 1.5px solid black;
+}
+
+.header__list--open {
+  display: flex;
+}
+
+.header__item {
+  padding: 10px 0;
+}
+
+.header__link {
+  font-size: 16px;
+  line-height: 20px;
+  font-family: @font-family-secondary;
+  transition-duration: 0.8s;
 }
 
 .intro,
@@ -122,8 +145,9 @@
   grid-column-start: 2;
   text-align: end;
   font-size: 16px;
-  line-height: 40px;
+  line-height: 20px;
   font-family: @font-family-secondary;
   transition-duration: 0.8s;
   color: black;
+  padding: 15px 0;
 }
