@@ -5,11 +5,16 @@ var themeButton = document.querySelector(".header__button");
 var currentTime = new Date().getHours();
 var theme = document.querySelector(".index-page");
 var titleBorder = document.querySelector(".intro__title");
+var toggleMenu = document.querySelector(".header__list");
+
+toggleMenu.classList.remove("header__list--open");
 
 toggle.addEventListener("click", function (evt) {
   evt.preventDefault();
   open.classList.toggle("dropdown-menu__button--close1");
   close.classList.toggle("dropdown-menu__button--open1");
+
+  toggleMenu.classList.toggle("header__list--open");
 });
 
 function timeCheck() {
