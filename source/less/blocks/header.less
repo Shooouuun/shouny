@@ -1,0 +1,129 @@
+.header {
+  position: relative;
+  padding: 30px 30px 20px;
+}
+
+.header__nav {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+}
+
+.header__logo {
+  font-size: 18px;
+  font-family: @font-family-secondary;
+  line-height: 20px;
+  font-weight: 700;
+  width: 100px;
+  letter-spacing: 0.040em;
+}
+
+.main-nav__toggle {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  letter-spacing: 0.040em;
+  transition-duration: 0.8s;
+  color: black;
+}
+
+.dropdown-menu__button {
+  font-family: @font-family-secondary;
+  position: absolute;
+  display: flex;
+  justify-content: flex-end;
+  font-size: 16px;
+  line-height: 20px;
+  transition-duration: 0.8s;
+}
+
+.dropdown-menu__button--open {
+  right: 0;
+  opacity: 1;
+}
+
+.dropdown-menu__button--close {
+  right: 30%;
+  opacity: 0;
+}
+
+.dropdown-menu__button--open1 {
+  right: 0;
+  opacity: 1;
+}
+
+.dropdown-menu__button--close1 {
+  right: 50%;
+  opacity: 0;
+}
+
+.header__list {
+  display: none;
+  background-color: white;
+}
+
+.intro,
+.skills {
+  padding: 0 30px 30px;
+}
+
+.intro__title {
+  position: relative;
+  font-family: @font-family-secondary;
+  font-size: 38px;
+  line-height: 50px;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  text-align: center;
+  border-bottom: 1.5px solid black;
+  padding: 30px 0;
+  letter-spacing: 0.040em;
+}
+
+.intro__desc {
+  font-family: @font-family-secondary;
+  font-size: 16px;
+  line-height: 26px;
+  letter-spacing: 0.040em;
+}
+
+.intro__photo {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.skills__title {
+  font-size: 20px;
+  font-family: @font-family-secondary;
+  line-height: 20px;
+  font-weight: 700;
+  letter-spacing: 0.040em;
+  margin-bottom: 15px;
+}
+
+.skills__list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.skills__item {
+  padding: 5px 0;
+}
+
+.skills__desc {
+  font-size: 16px;
+  font-family: @font-family-secondary;
+  line-height: 20px;
+  letter-spacing: 0.040em;
+}
+
+.header__button {
+  grid-column-start: 2;
+  text-align: end;
+  font-size: 16px;
+  line-height: 40px;
+  font-family: @font-family-secondary;
+  transition-duration: 0.8s;
+  color: black;
+}
