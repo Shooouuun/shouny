@@ -1,5 +1,10 @@
 .header {
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
   padding: 30px 30px 20px;
 }
 
@@ -7,6 +12,8 @@
   position: relative;
   display: grid;
   grid-template-columns: 1fr 3fr;
+  grid-template-rows: 50px 50px auto;
+  align-items: center;
 }
 
 .header__logo {
@@ -17,6 +24,7 @@
   width: 100px;
   letter-spacing: 0.040em;
   padding: 10px 0;
+  z-index: 1;
 }
 
 .main-nav__toggle {
@@ -28,50 +36,56 @@
   transition-duration: 0.8s;
   color: black;
   padding: 10px 0;
+  z-index: 1;
 }
 
 .dropdown-menu__button {
   font-family: @font-family-secondary;
-  position: absolute;
+  position: relative;
   display: flex;
   justify-content: flex-end;
   font-size: 24px;
   line-height: 20px;
-  transition-duration: 0.8s;
+  transition-duration: 0.5s;
 }
 
 .dropdown-menu__button--open {
-  right: 0;
+  transform: translateX(50%);
   opacity: 1;
 }
 
 .dropdown-menu__button--close {
-  right: 30%;
+  transform: translateX(-200%);
   opacity: 0;
 }
 
 .dropdown-menu__button--open1 {
-  right: 0;
+  transform: translateX(0);
   opacity: 1;
 }
 
 .dropdown-menu__button--close1 {
-  right: 50%;
+  transform: translateX(-50%);
   opacity: 0;
 }
 
 .header__wrap-list {
-  grid-column-start: 1;
-  grid-column-end: 3;
-  grid-row-start: 3;
   display: none;
+  flex-direction: row-reverse;
   opacity: 0;
-  transition: display .3s;
+  background-color: white;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  padding: 30px;
 }
 
 .header__list {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: flex-end;
   padding-bottom: 10px;
   border-bottom: 1.5px solid black;
@@ -94,7 +108,7 @@
 }
 
 .header__list--open {
-  display: grid;
+  display: flex;
   transform: translate3d(0%);
   opacity: 1;
 }
@@ -104,8 +118,8 @@
 }
 
 .header__link {
-  font-size: 24px;
-  line-height: 24px;
+  font-size: 34px;
+  line-height: 50px;
   font-family: @font-family-secondary;
   transition-duration: 0.8s;
 }
@@ -174,4 +188,5 @@
   transition-duration: 0.8s;
   color: black;
   padding: 10px 0;
+  z-index: 1;
 }
