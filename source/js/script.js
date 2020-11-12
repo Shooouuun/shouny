@@ -1,4 +1,4 @@
-var toggle = document.querySelector(".main-nav__toggle");
+var toggle = document.querySelector(".header__toggle");
 var open = document.querySelector(".dropdown-menu__button--open");
 var close = document.querySelector(".dropdown-menu__button--close");
 var themeButton = document.querySelector(".header__button");
@@ -21,12 +21,16 @@ toggle.addEventListener("click", function (evt) {
 });
 
 function timeCheck() {
-  if (currentTime > 18 || currentTime < 6) {
+  if (currentTime > 13 || currentTime < 6) {
     theme.classList.add('dark');
     toggle.classList.add('dark__button');
     themeButton.classList.add('dark__button');
     titleBorder.classList.add('dark__border');
-  };
+    toggleMenu.style.backgroundColor = "black";
+    themeButton.textContent = "White theme";
+  } else {
+    themeButton.textContent = "Dark theme";
+  }
 };
 
 timeCheck();
@@ -40,7 +44,10 @@ themeButton.addEventListener("click", function (evt) {
 
   if (themeButton.textContent === "White theme") {
     themeButton.textContent = "Dark theme";
+    toggleMenu.style.backgroundColor = "white";
+
   } else if (themeButton.textContent === "Dark theme") {
     themeButton.textContent = "White theme";
+    toggleMenu.style.backgroundColor = "black";
   };
 });
