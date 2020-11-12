@@ -1,4 +1,4 @@
-var toggle = document.querySelector(".main-nav__toggle");
+var toggle = document.querySelector(".header__toggle");
 var open = document.querySelector(".dropdown-menu__button--open");
 var close = document.querySelector(".dropdown-menu__button--close");
 var themeButton = document.querySelector(".header__button");
