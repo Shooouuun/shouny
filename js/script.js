@@ -1,7 +1,7 @@
-var toggle = document.querySelector(".header__toggle");
-var open = document.querySelector(".dropdown-menu__button--open");
-var close = document.querySelector(".dropdown-menu__button--close");
-var themeButton = document.querySelector(".header__button");
+var toggle = document.querySelector(".header__button");
+var open = document.querySelector(".header__button-span--nav");
+var close = document.querySelector(".header__button-span--close");
+var themeButton = document.querySelector(".header__button-theme");
 var currentTime = new Date().getHours();
 var theme = document.querySelector(".index-page");
 var titleBorder = document.querySelector(".intro__title");
@@ -10,10 +10,10 @@ var menuAnim = document.querySelector(".header__list");
 
 toggle.addEventListener("click", function (evt) {
   evt.preventDefault();
-  open.classList.toggle("dropdown-menu__button--close1");
-  close.classList.toggle("dropdown-menu__button--open1");
+  open.classList.toggle("header__button-span--close-mod");
+  close.classList.toggle("header__button-span--nav-mod");
 
-  toggleMenu.classList.toggle("header__list--open");
+  toggleMenu.classList.toggle("header__wrap-list--open");
   menuAnim.classList.toggle("header__list--anim");
   theme.classList.toggle("overwlow-hidden")
  // menuAnim.style.transform= 'translate3d(0, 0, 0)';
