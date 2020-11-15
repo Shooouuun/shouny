@@ -25,7 +25,7 @@ function timeCheck() {
     toggle.classList.add('dark__button');
     themeButton.classList.add('dark__button');
     titleBorder.classList.add('dark__border');
-    toggleMenu.style.backgroundColor = "black";
+    toggleMenu.style.backgroundColor = "rgb(15 15 15)";
     themeButton.textContent = "White theme";
   } else {
     themeButton.textContent = "Dark theme";
@@ -47,7 +47,7 @@ themeButton.addEventListener("click", function (evt) {
 
   } else if (themeButton.textContent === "Dark theme") {
     themeButton.textContent = "White theme";
-    toggleMenu.style.backgroundColor = "black";
+    toggleMenu.style.backgroundColor = "rgb(15 15 15)";
   };
 });
 
