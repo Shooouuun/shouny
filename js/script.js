@@ -15,7 +15,7 @@ toggle.addEventListener("click", function (evt) {
 
   toggleMenu.classList.toggle("header__wrap-list--open");
   menuAnim.classList.toggle("header__list--anim");
-  theme.classList.toggle("overwlow-hidden")
+  theme.classList.toggle("is-locked")
  // menuAnim.style.transform= 'translate3d(0, 0, 0)';
 });
 
@@ -53,11 +53,10 @@ themeButton.addEventListener("click", function (evt) {
 
 
 var headerr = document.querySelector(".header");
-
-window.onscroll = function () {
+/*window.onscroll = function () {
   if (window.pageYOffset > 50) {
     headerr.classList.add('header--mod');
   } else if (window.pageYOffset <= 50) {
     headerr.classList.remove('header--mod');
   }
-};
+};*/
