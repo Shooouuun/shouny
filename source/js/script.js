@@ -14,11 +14,10 @@ toggle.addEventListener("click", function (evt) {
   close.classList.toggle("header__button-span--nav-mod");
 
   toggleMenu.classList.toggle("header__wrap-list--open");
-  menuAnim.classList.toggle("header__list--anim");
   theme.classList.toggle("is-locked")
  // menuAnim.style.transform= 'translate3d(0, 0, 0)';
 });
-
+console.log(currentTime);
 function timeCheck() {
   if (currentTime > 18 || currentTime < 6) {
     theme.classList.add('dark');
@@ -60,3 +59,4 @@ var headerr = document.querySelector(".header");
     headerr.classList.remove('header--mod');
   }
 };*/
+
