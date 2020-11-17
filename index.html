@@ -11,28 +11,34 @@
 </head>
 <body class="index-page">
   <header class="header">
-    <nav class="header__nav">
+    <nav class="header__nav" aria-label="Основное меню">
       <a class="header__logo" title="shouny">Shouny</a>
       <button class="header__button" type="button">
         <span class="header__button-span header__button-span--nav">Navigation</span>
         <span class="header__button-span header__button-span--close">Close</span>
       </button>
-      <div class="header__wrap-list">
-        <button class="header__button-theme" type="button">White theme</button>
-        <ul class="header__list">
-          <li class="header__item"><a class="header__link">Home</a></li>
-          <li class="header__item"><a class="header__link">Project</a></li>
-          <li class="header__item"><a class="header__link">About</a></li>
-          <li class="header__item"><a class="header__link">Blog</a></li>
-        </ul>
-        <ul class="header__list">
-          <li class="header__item"><a href="" class="header__link">Instagram</a></li>
-          <li class="header__item"><a href="" class="header__link">Github</a></li>
-          <li class="header__item">
-            <button class="header__link-button" type="button">Get in touch</button>
-          </li>
-        </ul>
-      </div>
+      <ul class="header__list-main">
+        <li class="header__item-main">
+          <button class="header__button-theme" type="button">White theme</button>
+        </li>
+        <li class="header__item-main">
+          <ul class="header__list header__list--one-list">
+            <li class="header__item"><a class="header__link">Home</a></li>
+            <li class="header__item"><a class="header__link">Project</a></li>
+            <li class="header__item"><a class="header__link">About</a></li>
+            <li class="header__item"><a class="header__link">Blog</a></li>
+          </ul>
+        </li>
+        <li class="header__item-main">
+          <ul class="header__list header__list--two-list">
+            <li class="header__item"><a href="" class="header__link">Instagram</a></li>
+            <li class="header__item"><a href="" class="header__link">Github</a></li>
+            <li class="header__item">
+              <button class="header__link-button" type="button">Get in touch</button>
+            </li>
+          </ul>
+        </li>
+      </ul>
     </nav>
   </header>
   <main class="index-main">
@@ -77,9 +83,7 @@
       </ul>
     </section>
   </main>
-  <footer>
-
-  </footer>
+  <footer></footer>
   <script src="js/script.min.js"></script>
 </body>
 </html>
