@@ -1,62 +1,48 @@
-var toggle = document.querySelector(".header__button");
-var open = document.querySelector(".header__button-span--nav");
-var close = document.querySelector(".header__button-span--close");
-var themeButton = document.querySelector(".header__button-theme");
-var currentTime = new Date().getHours();
-var theme = document.querySelector(".index-page");
-var titleBorder = document.querySelector(".intro__title");
-var toggleMenu = document.querySelector(".header__wrap-list");
-var menuAnim = document.querySelector(".header__list");
+var CURRENT_TIME  = new Date().getHours();
+var INDEX_PAGE = document.querySelector(".index-page");
+var NAV_BTN = document.querySelector(".header__button");
+var TOGGLE_BTN_NAV = document.querySelector(".header__button-span--nav");
+var TOGGLE_BTN_CLOSE = document.querySelector(".header__button-span--close");
+var THEME_BTN = document.querySelector(".header__button-theme");
+var NAV_WRAP = document.querySelector(".header__list-main");
+var TITLE_BORDER = document.querySelector(".intro__title");
 
-toggle.addEventListener("click", function (evt) {
-  evt.preventDefault();
-  open.classList.toggle("header__button-span--close-mod");
-  close.classList.toggle("header__button-span--nav-mod");
-
-  toggleMenu.classList.toggle("header__wrap-list--open");
-  theme.classList.toggle("is-locked")
- // menuAnim.style.transform= 'translate3d(0, 0, 0)';
-});
-console.log(currentTime);
 function timeCheck() {
-  if (currentTime > 18 || currentTime < 6) {
-    theme.classList.add('dark');
-    toggle.classList.add('dark__button');
-    themeButton.classList.add('dark__button');
-    titleBorder.classList.add('dark__border');
-    toggleMenu.style.backgroundColor = "rgb(15 15 15)";
-    themeButton.textContent = "White theme";
+  if (CURRENT_TIME > 18 || CURRENT_TIME < 6) {
+    INDEX_PAGE.classList.add('dark');
+    NAV_BTN.classList.add('dark__button');
+
+    THEME_BTN.classList.add('dark__button');
+    TITLE_BORDER.classList.add('dark__border');
+    NAV_WRAP.style.backgroundColor = "rgb(15 15 15)";
+    THEME_BTN.textContent = "White theme";
   } else {
-    themeButton.textContent = "Dark theme";
+    THEME_BTN.textContent = "Dark theme";
   }
 };
-
 timeCheck();
 
-themeButton.addEventListener("click", function (evt) {
-  evt.preventDefault();
-  theme.classList.toggle("dark");
-  toggle.classList.toggle('dark__button');
-  themeButton.classList.toggle('dark__button');
-  titleBorder.classList.toggle('dark__border');
-
-  if (themeButton.textContent === "White theme") {
-    themeButton.textContent = "Dark theme";
-    toggleMenu.style.backgroundColor = "white";
-
-  } else if (themeButton.textContent === "Dark theme") {
-    themeButton.textContent = "White theme";
-    toggleMenu.style.backgroundColor = "rgb(15 15 15)";
-  };
+NAV_BTN.addEventListener("click", function (e) {
+  e.preventDefault();
+  TOGGLE_BTN_NAV.classList.toggle("header__button-span--close-mod");
+  TOGGLE_BTN_CLOSE.classList.toggle("header__button-span--nav-mod");
+  INDEX_PAGE.classList.toggle("is-locked");
+  NAV_WRAP.classList.toggle("header__list-main--open");
 });
 
+THEME_BTN.addEventListener("click", function (e) {
+  e.preventDefault();
+  INDEX_PAGE.classList.toggle("dark");
+  NAV_BTN.classList.toggle('dark__button');
+  THEME_BTN.classList.toggle('dark__button');
+  TITLE_BORDER.classList.toggle('dark__border');
 
-var headerr = document.querySelector(".header");
-/*window.onscroll = function () {
-  if (window.pageYOffset > 50) {
-    headerr.classList.add('header--mod');
-  } else if (window.pageYOffset <= 50) {
-    headerr.classList.remove('header--mod');
-  }
-};*/
+  if (THEME_BTN.textContent === "White theme") {
+    THEME_BTN.textContent = "Dark theme";
+    NAV_WRAP.style.backgroundColor = "white";
 
+  } else if (THEME_BTN.textContent === "Dark theme") {
+    THEME_BTN.textContent = "White theme";
+    NAV_WRAP.style.backgroundColor = "rgb(15 15 15)";
+  };
+});

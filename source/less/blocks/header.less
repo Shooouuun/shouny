@@ -9,7 +9,7 @@
 .header__nav {
   position: relative;
   display: grid;
-  grid-template-columns: 1fr 3fr;
+  grid-template-columns: min-content  1fr;
   grid-template-rows: 30px;
   align-items: baseline;
   z-index: 1;
@@ -20,7 +20,6 @@
   line-height: 24px;
   font-weight: 700;
   font-family: @font-family-secondary;
-  letter-spacing: 0.040em;
   z-index: 2;
 }
 
@@ -34,7 +33,6 @@
 }
 
 .header__button-span {
-  font-family: @font-family-secondary;
   display: flex;
   justify-content: flex-end;
   font-size: 20px;
@@ -66,111 +64,130 @@
   grid-column-start: 2;
   text-align: end;
   align-items: flex-start;
-  font-size: 20px;
-  line-height: 20px;
-  font-family: @font-family-secondary;
+  font-size: 18px;
+  line-height: 18px;
+  letter-spacing: 0.040em;
   color: inherit;
-  margin-bottom: 10%;
   z-index: 2;
 }
 
-.header__wrap-list {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.header__list-main {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-row-gap: 5%;
   background-color: white;
   position: fixed;
-  opacity: 0;
   left: 0;
   top: 0;
   height: 100vh;
-  min-height: 640px;
   width: 100%;
-  padding: 30px;
+  padding: 20% 30px;
   z-index: 1;
+  opacity: 0;
   will-change: transform;
   animation-name: lift-down;
   animation-duration: 0.6s;
   transition-duration: 0.6s;
   animation-fill-mode: forwards;
-  animation-timing-function: cubic-bezier(0, 0.55, 0.45, 1);
+  animation-timing-function: cubic-bezier(0.7, 0.8, 0, 1);
 
   &--open {
     opacity: 1;
     animation-name: lift-up;
+
+    & .header__item-main:nth-child(1) {
+      animation-name: lift-up;
+    }
+
+    & .header__item-main:nth-child(2) {
+      animation-name: lift-up;
+      animation-delay: 76ms;
+    }
+
+    & .header__item-main:nth-child(3) {
+      animation-name: lift-up;
+      animation-delay: 157ms;
+    }
   }
 }
 
-.header__list {
+.header__item-main {
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  width: 100%;
+  justify-content: flex-end;
+  align-items: center;
+  animation-name: lift-down;
+  animation-duration: 0.8s;
+  animation-fill-mode: forwards;
 
-  &:last-child {
-    display: flex;
-    justify-content: flex-end;
-    flex-flow: row wrap;
-    width: 100%;
-    margin-top: 10%;
-    align-items: center;
+  &:nth-child(1) {
+    align-items: flex-end;
+  }
+
+  &:nth-child(3) {
+    align-items: flex-start;
   }
 }
-
-.header__list:last-child .header__item {
-  margin-left: 20px;
-
-  &:first-child {
-    margin-left: 0;
-  }
-
-  & .header__link {
-    font-size: 18px;
-    line-height: 18px;
-    font-family: @font-family-secondary;
-    color: inherit;
-  }
-}
-
 
 @keyframes lift-up {
   from {
-    //transform: translate3d(120%, 0, 0);
-    clip-path: circle(0 at 85% 5%);
+    transform: translate3d(120%, 0, 0);
   }
+
   to {
-    //transform: translate3d(0);
-    clip-path: circle(150% at 85% 5%);
+    transform: translate3d(0);
   }
 }
 
 @keyframes lift-down {
   from {
-    //transform: translate3d(0);
-    clip-path: circle(150% at 85% 5%);
+    transform: translate3d(0);
   }
+
   to {
-    //transform: translate3d(120%, 0, 0);
-    clip-path: circle(0% at 85% 5%);
+    transform: translate3d(120%, 0, 0);
   }
 }
 
-.header__item {
-  padding: 10px 0;
+.header__list {
+  display: flex;
+  flex-flow: column;
+  align-items: flex-end;
+
+  &--one-list {
+    margin: 0;
+
+    & .header__item {
+      padding: 10px 0;
+    }
+  }
+
+  &--two-list {
+    flex-flow: row wrap;
+    justify-content: flex-end;
+
+    & .header__item {
+      margin: 0 0 15px 15px;
+    }
+
+    & .header__link {
+      font-size: 18px;
+      line-height: 18px;
+      color: inherit;
+    }
+  }
 }
 
 .header__link {
-  font-size: 35px;
+  font-size: 3em;
   line-height: 45px;
-  font-family: @font-family-secondary;
 }
 
 .header__link-button {
   font-size: 18px;
   line-height: 18px;
-  font-family: @font-family-secondary;
   color: inherit;
 }
+
 
 .intro,
 .skills {
@@ -187,14 +204,12 @@
   text-align: center;
   border-bottom: 1.5px solid black;
   padding: 30px 0;
-  letter-spacing: 0.040em;
 }
 
 .intro__desc {
   font-family: @font-family-secondary;
   font-size: 20px;
   line-height: 32px;
-  letter-spacing: 0.040em;
   color: rgb(134 134 139);
 }
 
@@ -208,7 +223,6 @@
   font-family: @font-family-secondary;
   line-height: 30px;
   font-weight: 700;
-  letter-spacing: 0.040em;
   margin-bottom: 15px;
 }
 
@@ -220,6 +234,5 @@
   font-family: @font-family-secondary;
   font-size: 20px;
   line-height: 32px;
-  letter-spacing: 0.040em;
   color: rgb(134 134 139);
 }
