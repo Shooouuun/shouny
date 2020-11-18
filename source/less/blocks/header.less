@@ -15,27 +15,29 @@
 }
 
 .header__logo {
-  font-size: 24px;
-  line-height: 24px;
-  font-weight: 700;
+  font-size: 18px;
+  line-height: 18px;
   font-family: @font-family-secondary;
   z-index: 2;
+  font-family: "Untl";
+  letter-spacing: -0.020em;
 }
 
 .header__button {
   position: relative;
   display: flex;
   justify-content: flex-end;
-  color: black;
   z-index: 2;
+  letter-spacing: -0.020em;
 }
 
 .header__button-span {
   display: flex;
   justify-content: flex-end;
-  font-size: 20px;
-  line-height: 20px;
+  font-size: 18px;
+  line-height: 18px;
   transition-duration: 0.6s;
+  font-family: "Untl";
 
   &--nav {
     transform: translate3d(50%, 0, 0);
@@ -64,8 +66,9 @@
   align-items: flex-start;
   font-size: 18px;
   line-height: 18px;
-  letter-spacing: 0.040em;
+  letter-spacing: -0.020em;
   z-index: 2;
+  font-family: "Untl";
 }
 
 .header__list-main {
@@ -151,7 +154,6 @@
   align-items: flex-end;
 
   &--one-list {
-    margin: 0;
 
     & .header__item {
       padding: 10px 0;
@@ -170,6 +172,8 @@
       font-size: 18px;
       line-height: 18px;
       color: inherit;
+      letter-spacing: -0.020em;
+      font-family: "Untl";
     }
   }
 }
@@ -191,25 +195,27 @@
 }
 
 .intro {
+  position: relative;
   overflow: hidden;
-
+  padding-bottom: 30px;
 }
 
 .intro__title {
-  position: relative;
   font-family: "oggr";
-  font-size: 120px;
-  line-height: 110px;
+  font-size: 6rem;
+  line-height: 85px;
   margin-bottom: 30px;
   font-weight: 300;
   text-align: center;
   padding: 30px 0;
+  letter-spacing: -5.0px;
+  user-select: none;
 }
 
 .intro__desc {
   font-family: "Untr";
-  font-size: 20px;
-  line-height: 32px;
+  font-size: 18px;
+  line-height: 28px;
   color: rgb(134 134 139);
   padding: 0 30px;
 }
