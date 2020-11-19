@@ -5,7 +5,6 @@ var TOGGLE_BTN_NAV = document.querySelector(".header__button-span--nav");
 var TOGGLE_BTN_CLOSE = document.querySelector(".header__button-span--close");
 var THEME_BTN = document.querySelector(".header__button-theme");
 var NAV_WRAP = document.querySelector(".header__list-main");
-var TITLE_BORDER = document.querySelector(".intro__title");
 
 function timeCheck() {
   if (CURRENT_TIME > 18 || CURRENT_TIME < 6) {
@@ -13,7 +12,6 @@ function timeCheck() {
     NAV_BTN.classList.add('dark__button');
 
     THEME_BTN.classList.add('dark__button');
-    TITLE_BORDER.classList.add('dark__border');
     NAV_WRAP.style.backgroundColor = "rgb(15 15 15)";
     THEME_BTN.textContent = "White theme";
   } else {
@@ -35,7 +33,6 @@ THEME_BTN.addEventListener("click", function (e) {
   INDEX_PAGE.classList.toggle("dark");
   NAV_BTN.classList.toggle('dark__button');
   THEME_BTN.classList.toggle('dark__button');
-  TITLE_BORDER.classList.toggle('dark__border');
 
   if (THEME_BTN.textContent === "White theme") {
     THEME_BTN.textContent = "Dark theme";
