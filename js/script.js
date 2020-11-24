@@ -5,6 +5,7 @@ var TOGGLE_BTN_NAV = document.querySelector(".header__button-span--nav");
 var TOGGLE_BTN_CLOSE = document.querySelector(".header__button-span--close");
 var THEME_BTN = document.querySelector(".header__button-theme");
 var NAV_WRAP = document.querySelector(".header__list-main");
+var ICON_NAV = document.querySelector(".header__icon");
 
 function timeCheck() {
   if (CURRENT_TIME > 18 || CURRENT_TIME < 6) {
